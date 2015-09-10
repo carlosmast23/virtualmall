@@ -1,7 +1,15 @@
-<!DOCTYPE html>
 <?php
-    
+   $nombre_archivo = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    //verificamos si en la ruta nos han indicado el directorio en el que se encuentra
+    if (strpos($nombre_archivo, '/') !== FALSE)
+    //de ser asi, lo eliminamos, y solamente nos quedamos con el nombre y su extension
+    $nombre_archivo = array_pop(explode('/', $nombre_archivo));
+    echo $nombre_archivo;
+    $nombre_archivo=  str_replace("Vista","",$nombre_archivo);
+    header('Location: '.$nombre_archivo);
 ?>
+
+<!DOCTYPE html>
 
 <html lang="en">
 	<head>

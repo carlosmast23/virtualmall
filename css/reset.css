@@ -45,4 +45,7 @@ embed {
 	vertical-align:top;
 }
 * { border:none}
-input, textarea{outline:none !important}
+input, textarea{
+	outline: none !important;
+	text-align: center;
+}

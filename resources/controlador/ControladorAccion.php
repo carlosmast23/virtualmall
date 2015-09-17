@@ -1,33 +1,25 @@
 <?php
-
 require_once RAIZ.'resources/Config.php';
 
-abstract class  ControladorSet 
-{
+abstract class ControladorAccion {
+    
     //variables globales opcioneles para las opciones
     protected static $todos="todos";
     protected static $admin="admin";
-    //protected $conexion;
-    protected $configuracion;
-    protected $diccionario;
-    protected $permisos; //array que almacena los permisos de los usuarios para cada pagina
-    //protected $pagina;
     
-    abstract function buscarValores();
-    abstract function setDiccionario();
-    abstract function getPagina();
-    abstract function setPermisos();
-    
-    function __construct() 
-    {
-        //$this->pagina=$pagina;
-        $this->setDiccionario();
-        $this->buscarValores();
-        $this->setPermisos();
-        $this->configuracion=Config::getInstance();
-        //session_start();
-    }
-    
+     protected $configuracion;
+     protected $permisos; //array que almacena los permisos de los usuarios para cada pagina
+     //protected $redireccion; //pagina para redireccionar;
+     
+     abstract function setPermisos(); //ingresar los permisos de loa pagina
+     abstract function ejecutar(); //funcion que ejecutar las acciones necesarias
+     abstract function getRedireccion(); //funcion que obtiene la pagina para redireccion
+     
+     function __construct() {
+         $this->configuracion=Config::getInstance();
+         $this->setPermisos();
+     }
+     
     private function verificarSession()
     {
         if(isset($_SESSION["session"]))
@@ -59,25 +51,16 @@ abstract class  ControladorSet
         
         return false;
     }
-
-
-    //realiza el remplazo de las variables
+     
     public function renderizar()
     {
-        
-        $pagina=  file_get_contents($this->getPagina());        
-        $inicio=strpos($pagina,"<?php");
-        $fin=strpos($pagina,"?>");
-        
-        
-        
+              
         if($this->verificarSession())
         {
-            foreach ($this->diccionario as $key => $value)
-            {
-                $pagina=  str_replace("[$key]", $value, $pagina);            
-            }   
-            print $pagina;
+            $this->ejecutar();
+            //$direccion = 'Location:';
+            //$direccion = $direccion . $this->configuracion->sitename . $this->getRedireccion();
+            //header($direccion);
         }
         else
         {
@@ -91,11 +74,6 @@ abstract class  ControladorSet
         
     }    
     
-    protected function getConfiguracion()
-    {
-        return $this->configuracion;
-    }
-    
     public  function direccionar($url)
     {
         $direccion = 'Location:';
@@ -103,7 +81,5 @@ abstract class  ControladorSet
         //$direccion=  $this->configuracion->$sitename;
         header($direccion);
     }
-    
-}
 
-?>
+}

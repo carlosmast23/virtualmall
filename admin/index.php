@@ -1,5 +1,5 @@
 <?php
-require_once './resources/VariablesGlobales.php';
+require_once '../resources/VariablesGlobales.php';
 require_once RAIZ."resources/controlador/ControladorSet.php";
 
 class Controlador extends ControladorSet

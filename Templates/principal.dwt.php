@@ -15,19 +15,19 @@
 	<head>
 		<title></title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-		<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-		<script type="text/javascript" src="js/jquery-1.6.js" ></script>
-		<script type="text/javascript" src="js/cufon-yui.js"></script>
-		<script type="text/javascript" src="js/cufon-replace.js"></script>  
-		<script type="text/javascript" src="js/Vegur_300.font.js"></script>
-		<script type="text/javascript" src="js/PT_Sans_700.font.js"></script>
-		<script type="text/javascript" src="js/PT_Sans_400.font.js"></script>
-		<script type="text/javascript" src="js/tms-0.3.js"></script>
-		<script type="text/javascript" src="js/tms_presets.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-		<script type="text/javascript" src="js/atooltip.jquery.js"></script>
+		<link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../css/layout.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+		<script type="text/javascript" src="../js/jquery-1.6.js" ></script>
+		<script type="text/javascript" src="../js/cufon-yui.js"></script>
+		<script type="text/javascript" src="../js/cufon-replace.js"></script>  
+		<script type="text/javascript" src="../js/Vegur_300.font.js"></script>
+		<script type="text/javascript" src="../js/PT_Sans_700.font.js"></script>
+		<script type="text/javascript" src="../js/PT_Sans_400.font.js"></script>
+		<script type="text/javascript" src="../js/tms-0.3.js"></script>
+		<script type="text/javascript" src="../js/tms_presets.js"></script>
+		<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="../js/atooltip.jquery.js"></script>
 		<!--[if lt IE 9]>
 		<script type="text/javascript" src="js/html5.js"></script>
 		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
@@ -39,7 +39,7 @@
 		<![endif]-->
 	</head>
 	<body id="page1">
-		<div class="main">
+	<div class="main">
 <!--header -->
 			<header>
 				<div class="wrapper">
@@ -59,50 +59,22 @@
 						<li class="last"><a href="Contacts.html"><span>Contactos</span></a></li>
 					</ul>
 				</nav>
-				<div id="slider">
-					<ul class="items">
-						<li>
-							<img src="images/img1.jpg" alt="">
-							<div class="banner">
-								<span class="title"><span class="color2">El mejor lugar</span><span class="color1">Para comprar</span><span>En tu ciudad</span></span>
-								<p>Encuentra los productos y servicios en tu ciudad a tan solo un click de distancia</p>
-								<a href="#" class="button1">Leer Mas</a>
-							</div>
-						</li>
-						<li>
-							<img src="images/img2.jpg" alt="">
-							<div class="banner">
-								<span class="title"><span class="color2">Promociones</span><span class="color1">Rebajas</span><span>Descuentos</span></span>
-								<p>Mantente al dia con las promociones , descuentos , y mas beneficios que solo virtualmall te ofrece .</p>
-								<a href="#" class="button1">Read More</a>
-							</div>
-						</li>
-						<li>
-							<img src="images/img3.jpg" alt="">
-							<div class="banner">
-								<span class="title"><span class="color2">Consulta precios</span><span class="color1">Busca Negocios</span><span>Y mucho mas ...</span></span>
-								<p>Virtual mall te ayuda a encontrar servicios y productos de acuerdo a tus necesidades.</p>
-								<a href="#" class="button1">Read More</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</header>
+				
+	  </header>
 <!--header end-->
 <!--content -->
-<div class="wrapper">
-					<h2>Contenido</h2>
-					
-</div>
+<div class="wrapper"><!-- TemplateBeginEditable name="Contenido" -->
+  <h2>Contenido</h2>
+<!-- TemplateEndEditable --></div>
 <!--content end-->
 <!--footer -->
 			<footer>
 				<ul id="icons">
 					<li class="first">Siguenos:</li>
-					<li><a href="#" class="normaltip" title="Facebook"><img src="images/icon1.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="Twitter"><img src="images/icon2.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="Picasa"><img src="images/icon3.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="YouTube"><img src="images/icon4.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Facebook"><img src="../images/icon1.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Twitter"><img src="../images/icon2.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Picasa"><img src="../images/icon3.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="YouTube"><img src="../images/icon4.jpg" alt=""></a></li>
 				</ul>
 				VirtualMall.com &copy; 2015 <br>
 				Website Develoment by <a href="http://www.templatemonster.com/" target="_blank">Codesoft.com</a><br>

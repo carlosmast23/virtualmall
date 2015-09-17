@@ -1,5 +1,16 @@
+<?php
+   $nombre_archivo = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    //verificamos si en la ruta nos han indicado el directorio en el que se encuentra
+    if (strpos($nombre_archivo, '/') !== FALSE)
+    //de ser asi, lo eliminamos, y solamente nos quedamos con el nombre y su extension
+    $nombre_archivo = array_pop(explode('/', $nombre_archivo));
+    echo $nombre_archivo;
+    $nombre_archivo=  str_replace("Vista","",$nombre_archivo);
+    header('Location: '.$nombre_archivo);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- InstanceBegin template="/Templates/contenidoPrincipal.dwt.php" codeOutsideHTMLIsLocked="false" -->
 	<head>
 		<title></title>
 		<meta charset="utf-8">
@@ -48,17 +59,34 @@
 <!--header end-->
 <!--content -->
 			<article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
-				<div class="wrapper">
-					<h2>Contact Form</h2>
-				</div>
+				<div class="wrapper"><!-- InstanceBeginEditable name="Contenido" -->
+				</br>	
+                 <div style="width:30%;margin: 0 auto;border-width:4px;border-color:#5f870e;border-style:inset;padding:5px;text-align:center">
+                 	<h2>Login</h2>
+                    <form action="php/ValidarLogin.php" method="post">
+                    	<div  class="wrapper">
+                        	<span>Usuario:</span>
+                             <div class="bg"><input name="usuario" type="text" class="input" id="usuario" />
+                        </div>
+                        
+                        <div  class="wrapper">
+                        	<span>Clave:</span>
+                            <div class="bg"><input name="clave" type="password" class="input" id="clave" />
+                        </div>
+                        
+                        </br>
+                      		<input class="button1" type="submit" value="Ingresar">
+                    </form>
+                 </div>
+				<!-- InstanceEndEditable --></div>
 			</article>
 		</div>
 		<div class="bg1">
 			<div class="main">
 				<article id="content2">
-					<div class="wrapper">
-						<h3>Otro contenido</h3>
-					<div>
+					<div class="wrapper"><!-- InstanceBeginEditable name="Otro contenido" -->
+					  <h3>Otro contenido</h3>
+					<!-- InstanceEndEditable --></div>
 				</article>
 			</div>
 		</div>
@@ -73,11 +101,11 @@
 					<li><a href="#" class="normaltip" title="Picasa"><img src="images/icon3.jpg" alt=""></a></li>
 					<li><a href="#" class="normaltip" title="YouTube"><img src="images/icon4.jpg" alt=""></a></li>
 				</ul>
-				Codesoft.com &copy; 2015 <br>Website develoment by <a href="http://www.templatemonster.com/" target="_blank">TemplateMonster.com</a><br>
+				Codesoft.com &copy; 2015 <br>Website develoment by <a href="http://www.templatemonster.com/" target="_blank">Codesoft.com</a><br>
 				<!-- {%FOOTER_LINK} -->
 			</footer>
 <!--footer end-->
 		</div>
 		<script type="text/javascript"> Cufon.now(); </script>
 	</body>
-</html>
+<!-- InstanceEnd --></html>

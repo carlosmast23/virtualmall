@@ -73,9 +73,18 @@ abstract class  ControladorSet
         
         if($this->verificarSession())
         {
+            //cambio de las variables directas
             foreach ($this->diccionario as $key => $value)
             {
-                $pagina=  str_replace("[$key]", $value, $pagina);            
+                if(gettype($value)=="array")
+                {
+                    $pagina=$this->remplazarEstructura($pagina, $key, $this->diccionario);
+                           
+                }
+                else
+                {
+                    $pagina=  str_replace("[$key]", $value, $pagina);     
+                }
             }   
             print $pagina;
         }
@@ -90,6 +99,58 @@ abstract class  ControladorSet
         }                
         
     }    
+    
+    private function remplazarEstructura($html,$nombre,$diccionario)
+    {
+       // echo $nombre;
+        //$nombre="columna";
+        $apertura="<!--estructura=".$nombre."-->";
+
+        $cierre="<!--/estructura=".$nombre."-->";
+
+        //echo $apertura;
+        $posApertura=strpos($html,$apertura);
+        $posCierre=strpos($html,$cierre);
+        $tamanio=  strlen($html);
+
+        $nuevaCadena=substr($html,$posApertura,($posCierre-$posApertura)+  strlen($cierre));
+        //echo $nuevaCadena;
+
+        $tramo=  str_replace($apertura,"",$nuevaCadena);
+        $tramo=  str_replace($cierre,"",$tramo);
+
+       // echo $tramo;
+        //echo "-> $posApertura <- $posCierre";
+
+              //echo $diccionario["columna"]["fila2"][2];
+        //REMPLAZAR LOS VALORES Y GENERAR EL NUEVO COGIDO
+
+        $clave;
+        foreach ($diccionario[$nombre] as $key => $arreglo)
+        {
+              $clave=$key;
+              break;
+        } 
+
+        $nuevaCorte="";
+
+        for ($i=0;$i<count($diccionario[$nombre][$clave]);$i++)
+        {
+            $remplazado=$tramo;
+            foreach ($diccionario[$nombre] as $key => $arreglo)
+            {
+               //echo $diccionario['columna'][$key][$i]." ->";
+               $remplazado=str_replace("[$key]",$diccionario[$nombre][$key][$i], $remplazado);
+            }
+            $nuevaCorte=$nuevaCorte.$remplazado;
+            //echo "</br>";
+        }
+
+        $paginaFinal=str_replace($nuevaCadena,$nuevaCorte,$html);
+        return $paginaFinal;
+
+        
+    }
     
     protected function getConfiguracion()
     {

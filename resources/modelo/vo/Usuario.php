@@ -67,8 +67,7 @@ class Usuario extends AbstractDb
 
     public function saveEstado() 
     {
-        $this->copia=clone($this);
-        
+        $this->copia=clone($this);        
     }
 
 }

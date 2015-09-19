@@ -18,10 +18,8 @@ class ValidarLogin extends ControladorAccion
         }
         else
         {   
-            $this->direccionar("loginVista.php");
-            
-        }
-               
+            $this->direccionar("loginVista.php");            
+        }            
         
     }
 

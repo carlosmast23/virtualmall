@@ -78,7 +78,7 @@ abstract class  ControladorSet
             {
                 if(gettype($value)=="array")
                 {
-                    $pagina=$this->remplazarEstructura($pagina, $key, $this->diccionario);
+                    $pagina=$this->remplazarEstructura($pagina, $key, $value);
                            
                 }
                 else
@@ -126,7 +126,7 @@ abstract class  ControladorSet
         //REMPLAZAR LOS VALORES Y GENERAR EL NUEVO COGIDO
 
         $clave;
-        foreach ($diccionario[$nombre] as $key => $arreglo)
+        foreach ($diccionario as $key => $arreglo)
         {
               $clave=$key;
               break;
@@ -134,13 +134,20 @@ abstract class  ControladorSet
 
         $nuevaCorte="";
 
-        for ($i=0;$i<count($diccionario[$nombre][$clave]);$i++)
+        for ($i=0;$i<count($diccionario[$clave]);$i++)
         {
             $remplazado=$tramo;
-            foreach ($diccionario[$nombre] as $key => $arreglo)
+            foreach ($diccionario as $key => $arreglo)
             {
                //echo $diccionario['columna'][$key][$i]." ->";
-               $remplazado=str_replace("[$key]",$diccionario[$nombre][$key][$i], $remplazado);
+                if(gettype($diccionario[$key][$i])=="array")
+                {
+                    $remplazado=$this->remplazarEstructura($remplazado,$key,$diccionario[$key][$i]);
+                }
+                else
+                {                   
+                    $remplazado=str_replace("[$key]",$diccionario[$key][$i], $remplazado);
+                }
             }
             $nuevaCorte=$nuevaCorte.$remplazado;
             //echo "</br>";

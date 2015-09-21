@@ -68,6 +68,11 @@
                         <tr>
                             <td>[fila1]</td>
                             <td>[fila2]</td>
+                            <td>
+                            <!--estructura=btn-->
+                                <input type='button' [activar] value='[valor]'>
+                            <!--/estructura=btn-->
+                            </td>
                         </tr>
                        <!--/estructura=columna-->
                       </tbody>

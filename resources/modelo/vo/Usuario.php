@@ -19,11 +19,17 @@ class Usuario extends AbstractDb
     private $nick;
     private $clave;
     
-    function __construct($nick, $clave) 
+    function __construct($nick=null, $clave=null) 
     {
-        $this->nick = $nick;
-        $this->clave = $clave;
-    }         
+        //echo func_num_args();
+        //if(func_num_args()>0)
+        //{        
+            $this->nick = $nick;
+            $this->clave = $clave;
+        //}
+    }   
+    
+    
 
     function getNick() 
     {
@@ -69,5 +75,9 @@ class Usuario extends AbstractDb
     {
         $this->copia=clone($this);        
     }
+
+    
+    
+    
 
 }

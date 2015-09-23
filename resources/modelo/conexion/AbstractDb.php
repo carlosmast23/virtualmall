@@ -19,4 +19,24 @@ abstract class AbstractDb
     abstract public function saveEstado();
     abstract public function getEstado();
     //abstract public function getPk(); //obtener la clave principa;
+    
+    //funcion que me permite llenar automaticamente con el nombre de los arrays desde el formulario
+    public function llenarConArray($array)
+    {
+       
+        foreach ($array as $key => $valor)
+        {
+              //echo $key ." => ".$valor;
+            //echo "$key </ br>";
+            if (property_exists(get_class($this),$key)) 
+            {
+                //self::$key=$valor;
+                $setter = 'set' . ucfirst($key);
+                $this->$setter($valor);  
+                echo $valor;
+            }
+            
+        } 
+      //  return new self();
+    }
 }

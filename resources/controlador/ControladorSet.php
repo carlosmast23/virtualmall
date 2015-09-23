@@ -1,66 +1,37 @@
 <?php
 
 require_once RAIZ.'resources/Config.php';
+require_once RAIZ.'resources/controlador/ControladorGenerico.php';
 
-abstract class  ControladorSet 
+abstract class  ControladorSet extends ControladorGenerico
 {
+    //public $mensaje="hola mundo";
     //variables globales opcioneles para las opciones
-    protected static $todos="todos";
-    protected static $admin="admin";
+  //  protected static $todos="todos";
+  //  protected static $admin="admin";
     //protected $conexion;
-    protected $configuracion;
+  //  protected $configuracion;
     protected $diccionario;
-    protected $permisos; //array que almacena los permisos de los usuarios para cada pagina
+  //  protected $permisos; //array que almacena los permisos de los usuarios para cada pagina
     //protected $pagina;
     
     abstract function buscarValores();
     abstract function setDiccionario();
     abstract function getPagina();
-    abstract function setPermisos();
+  //  abstract function setPermisos();
     
     function __construct() 
     {
         //$this->pagina=$pagina;
+        parent::__construct();
         $this->setDiccionario();
         $this->buscarValores();
-        $this->setPermisos();
-        $this->configuracion=Config::getInstance();
+        
+        //$this->setPermisos();
+        //$this->configuracion=Config::getInstance();
         //session_start();
     }
     
-    private function verificarSession()
-    {
-        if(isset($_SESSION["session"]))
-        {
-            $correcto=false;
-            foreach ($this->permisos as $valor)
-            {
-                echo $_SESSION["session"];
-                if($_SESSION["session"]==$valor)
-                {
-                    //echo "encontrado ...";
-                    $correcto=true;
-                }
-            }
-            return $correcto;
-        }
-        else
-        {
-            foreach ($this->permisos as $valor)
-            {
-                if("todos"==$valor)
-                {
-                    return true;
-                }
-            }
-            return false;
-            
-        }
-        
-        return false;
-    }
-
-
     //realiza el remplazo de las variables
     public function renderizar()
     {
@@ -157,20 +128,7 @@ abstract class  ControladorSet
         return $paginaFinal;
 
         
-    }
-    
-    protected function getConfiguracion()
-    {
-        return $this->configuracion;
-    }
-    
-    public  function direccionar($url)
-    {
-        $direccion = 'Location:';
-        $direccion = $direccion . $this->configuracion->sitename . $url;
-        //$direccion=  $this->configuracion->$sitename;
-        header($direccion);
-    }
+    }    
     
 }
 

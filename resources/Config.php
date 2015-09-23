@@ -19,7 +19,7 @@ class Config
 	public $user = 'root';
 	public $password = '1234';
 	public $db = 'virtualmalldb';
-        public $sitename='http://localhost/virtualmall/';
+        public $siteName='http://localhost/virtualmall/';
         
         public static function getInstance()
         {

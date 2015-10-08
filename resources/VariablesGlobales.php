@@ -1,5 +1,6 @@
 <?php
    define('RAIZ',$_SERVER['DOCUMENT_ROOT']."/virtualmall/"); 
+  
   // $arPaths[] = RAIZ."/resources";
   // $arPaths[] = RAIZ."/resources/conexion/";
   // $sMergedPaths = implode(PATH_SEPARATOR,$arPaths);

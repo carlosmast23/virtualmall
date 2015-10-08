@@ -62,7 +62,7 @@ abstract class ControladorGenerico {
     public  function direccionar($url)
     {
         $direccion = 'Location:';
-        $direccion = $direccion . $this->configuracion->siteName . $url;
+        $direccion = $direccion . $this->configuracion->getSitePath() . $url; //revisar
         //$direccion=  $this->configuracion->$sitename;
         header($direccion);
     }
@@ -116,5 +116,33 @@ abstract class ControladorGenerico {
     public function getPathAbsoluta($url)
     {
         return $this->configuracion->siteName . $url;
+    }
+    
+    static public function buscarDirectorio()
+    {
+        //$path=realpath(dirname(__FILE__));
+        $path=str_replace('\\', '/',dirname(__FILE__));
+        $archivo="/Main.php";
+
+        $condicion=true;
+        while($condicion)
+        {
+            $dirFinal=$path.$archivo;
+            echo $dirFinal."</br>";
+            if (file_exists($dirFinal))
+            {
+                return realpath($dirFinal);
+            }
+            else
+            {
+                $respaldo=$path;
+                $path=rtrim(dirname($path). PHP_EOL);
+                if($respaldo==$path)
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

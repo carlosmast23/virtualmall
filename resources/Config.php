@@ -19,7 +19,18 @@ class Config
 	public $user = 'root';
 	public $password = '1234';
 	public $db = 'virtualmalldb';
-        public $siteName='http://localhost/virtualmall/';
+        private $siteName='http://localhost/';
+        private $subSite='virtualmall/';
+        
+        public function getSitePath()
+        {
+           return $this->siteName.$this->subSite; 
+        }
+        
+        public function getSubSite()
+        {
+            return $this->subSite;
+        }
         
         public static function getInstance()
         {

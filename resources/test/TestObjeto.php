@@ -1,6 +1,7 @@
 <?php
     
-    require_once '../VariablesGlobales.php';
+    //require_once '../VariablesGlobales.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/resources';
     require_once RAIZ."resources/modelo/servicios/UsuarioServicio.php";    
     require_once RAIZ."resources/modelo/vo/Usuario.php";    
     

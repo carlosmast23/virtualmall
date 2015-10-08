@@ -46,6 +46,31 @@ abstract class ControladorAccion extends ControladorGenerico {
         
     }    
     
-    
+   public function setVarSession($clave,$obj)
+   {
+       if (session_status() == PHP_SESSION_NONE) 
+       {
+            session_start();
+       }
+       $_SESSION[$clave]=$obj;
+       return true;
+   }
+   
+   public function getVarSession($clave)
+   {
+       if (session_status() == PHP_SESSION_NONE) 
+       {
+            session_start();
+       }
+       if(isset($_SESSION[$clave]))
+       {
+           return $_SESSION[$clave];
+       }
+       else
+       {
+           return null;
+       }
+       
+   }
 
 }

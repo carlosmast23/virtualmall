@@ -7,23 +7,34 @@
 <?php
 
 require_once CONTROLADOR_SET;
+require_once SERVICIOS."EmpresaServicio.php";
 
 class Controlador extends ControladorSet
 {
     public function buscarValores() 
     {
-        $this->diccionario['calculo']="valor remplazado";
+        $servicio=new EmpresaServicio();
+        $obj=$servicio->obtenerPorClave("nombre",$_REQUEST['id'])[0];
+        $this->diccionario['nombre']=$obj->getNombre();
+        $this->diccionario['direccion']=$obj->getDireccion();
+        $this->diccionario['telefonos']=$obj->getTelefonos();
+        $this->diccionario['email']=$obj->getEmail();
+        $this->diccionario['descripcion']=$obj->getDescripcion();
+        
     }
 
     public function setDiccionario() {
         $this->diccionario= array(
-           "Homepage"=>"remplazo",
-           "calculo"=>" ",
+           "nombre"=>"",
+           "direccion"=>"",
+           "telefonos"=>"",
+           "email"=>"",
+           "descripcion"=>"",
         );
     }
 
     public function getPagina() {
-        return "loginVista.php";
+        return "editarVista.php";
     }
 
     

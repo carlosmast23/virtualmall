@@ -14,7 +14,7 @@
 require_once RAIZ."resources/modelo/facade/UsuarioFacade.php";  
 require_once RAIZ."resources/modelo/vo/Usuario.php";
 
-class UsuarioServicio 
+class UsuarioServicio extends AbstractServicio
 {
     private $usuarioFacade;
     
@@ -29,7 +29,8 @@ class UsuarioServicio
         if(!(is_null($usuario)))
         {
             //echo $usuario;
-            if($usuario->getClave()==$clave)
+            //echo $usuario->getClave()." -> ".password_hash($clave,PASSWORD_DEFAULT);
+            if(password_verify($clave,$usuario->getClave()))
             {
                 return true;                
             }
@@ -48,6 +49,7 @@ class UsuarioServicio
     
     public function grabar($obj)
     {
+        $obj->encryptHash();
         $this->usuarioFacade->insert($obj);
     }
     
@@ -89,17 +91,8 @@ class UsuarioServicio
     
     public function obtenerTodosLosDatos()
     {
-        $array=array();
         $consulta=$this->usuarioFacade->consultaTabla();
-        $fila=mysql_fetch_array($consulta);
-        $i=0;
-        do
-        {
-            $array[$i]=new Usuario($fila[0],$fila[1]);
-            //echo $fila[1] ."<br>";
-            $i++;
-        }while($fila=mysql_fetch_array($consulta));
-        return $array;
+        return $consulta;
     }
 
 }

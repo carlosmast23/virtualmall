@@ -60,24 +60,56 @@
 <!--content -->
 			<article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
 				<div class="wrapper"><!-- InstanceBeginEditable name="Contenido" -->
-				</br>	
-                 <div style="width:30%;margin: 0 auto;border-width:4px;border-color:#5f870e;border-style:inset;padding:5px;text-align:center">
-                 	<h2>Login</h2>
-                    <form action="php/ValidarLogin.php" method="post">
-                    	<div  class="wrapper">
-                        	<span>Usuario:</span>
-                             <div class="bg"><input name="usuario" type="text" class="input" id="usuario" />
-                        </div>
-                        
-                        <div  class="wrapper">
-                        	<span>Clave:</span>
-                            <div class="bg"><input name="clave" type="password" class="input" id="clave" />
-                        </div>
-                        
-                        </br>
-                      		<input class="button1" type="submit" value="Ingresar">
-                    </form>
-                 </div>
+                 <div style="width:40%;margin: 0 auto;border-width:4px;border-color:#5f870e;border-style:inset;padding:5px;text-align:center">
+				  <h2>Nuevo Usuario</h2>
+                  <form action="php/RegistrarUsuario.php" method="post">
+				  <table style="text-align:left" width="100%" border="1">
+                  <tbody>
+                    <tr>
+                      <td><span class="color1">Usuario:</span></td>
+                      <td><input name="nick" type="text" id="nick"></td>
+                    </tr>
+                    <tr>
+                      <td><span class="color1">Clave:</span></td>
+                      <td><input name="clave" type="password"></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><span class="color2">Nombre Completo:</span></td>
+                      <td><input name="nombres" type="text" id="nombres"></td>
+                    </tr>
+                    
+                    <tr>
+                      <td><span class="color2">Fecha Nacimiento:</span></td>
+                      <td>
+                      	<input name="fechaNacimiento" type="date" id="fechaNacimiento">
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td><span class="color2">Sexo:</span></td>
+                      <td>
+                      <select name="sexo" id="sexo">
+                      	<option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                      </select>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td><span class="color2">Correo Electronico:</span></td>
+                      <td><input name="email" type="text" id="email"></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td align="center"><input  type="submit" class="input" value="R E G I S T R O"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                </form>
+			</div>
 				<!-- InstanceEndEditable --></div>
 			</article>
 		</div>
@@ -85,8 +117,7 @@
 			<div class="main">
 				<article id="content2">
 					<div class="wrapper"><!-- InstanceBeginEditable name="Otro contenido" -->
-					 <p><span class="color1">No estas registrado?</span><br>
-								Eres nuevo en VirtualMall , no pierdas tiempo , registrate para empezar a usar todos los beneficios , Ingresa <a href="registroVista.php">Aqui</a></p>
+					  <h3>Otro contenido</h3>
 					<!-- InstanceEndEditable --></div>
 				</article>
 			</div>

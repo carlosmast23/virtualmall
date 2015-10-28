@@ -1,14 +1,31 @@
 <?php
 
 class Columna {
+    /*
+     * representa el nombre de la columna en la base de datos
+     */
     private $nombre;
+    /*
+     * representa la referencia a la variable que contiene el objeto
+     */
     private $valor;
-    private $tipo; //fk , pk ,0=normal
+    /*
+     * representa el tipo de clave en la base de datos
+     * pk =primary key , 
+     * fk =foren key ,
+     * 0=normal
+     */
+    private $tipo; 
     
-    function __construct($nombre, $valor, $tipo) {
+    private $entity;
+    private $facade;
+    
+    function __construct($nombre,&$valor, $tipo,$entity="",$facade="") {
         $this->nombre = $nombre;
-        $this->valor = $valor;
+        $this->valor =&$valor;
         $this->tipo = $tipo;
+        $this->entity=$entity;
+        $this->facade=$facade;
     }
     
     function getNombre() {
@@ -33,6 +50,22 @@ class Columna {
 
     function setTipo($tipo) {
         $this->tipo = $tipo;
+    }
+
+    function getEntity() {
+        return $this->entity;
+    }
+
+    function getFacade() {
+        return $this->facade;
+    }
+
+    function setEntity($entity) {
+        $this->entity = $entity;
+    }
+
+    function setFacade($facade) {
+        $this->facade = $facade;
     }
 
 

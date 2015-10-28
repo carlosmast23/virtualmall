@@ -20,11 +20,12 @@ class UsuarioFacade extends AbstractFacade
         parent::__construct();
     }
 
-    protected function getEstructBlank() 
-    {
-        return (new Usuario("",""))->getEstructura();
+    protected function getNameRelationEntity() {
+        return "Usuario";
     }
-    
-    
+
+//    public function getObj($fila) {
+//       return new Usuario($fila[0],$fila[1],$fila[2],$fila[3],$fila[4],$fila[5]);
+//    }
 
 }

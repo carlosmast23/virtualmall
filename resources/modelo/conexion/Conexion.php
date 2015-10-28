@@ -1,7 +1,7 @@
 <?php
 
 //require_once '../../VariablesGlobales.php';
-require_once RAIZ.'resources/Config.php';
+require_once RAIZ.'Config.php';
 
 class Conexion {
    private static $instancia;

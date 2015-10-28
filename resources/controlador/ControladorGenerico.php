@@ -1,6 +1,7 @@
 <?php
 
 abstract class ControladorGenerico {
+    
     // protected $mensaje;
      //variables globales opcioneles para las opciones
      protected static $todos="todos";
@@ -101,7 +102,7 @@ abstract class ControladorGenerico {
         }
         
         $direccion = 'Location:';
-        $direccion = $direccion . $this->configuracion->siteName 
+        $direccion = $direccion . $this->configuracion->getSitePath()
                 ."mensajes/mensaje.php?"
                 . "titulo=$titulo"
                 . "&mensaje=$mensaje"
@@ -115,7 +116,7 @@ abstract class ControladorGenerico {
     
     public function getPathAbsoluta($url)
     {
-        return $this->configuracion->siteName . $url;
+        return $this->configuracion->getSitePath() . $url;
     }
     
     static public function buscarDirectorio()

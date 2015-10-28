@@ -23,7 +23,7 @@ class Controlador extends ControladorSet
     }
 
     public function getPagina() {
-        return "loginVista.php";
+        return "nuevaVista.php";
     }
 
     

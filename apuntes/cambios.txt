@@ -1,0 +1,13 @@
+1.- revisar los mensajes para crear una dirreccion estandar para aumentar mensajes al directorio
+2.- aumentar el tipo de dato a la clase que tiene el modelo objeto realcional
+3.- realizar validaciones de los tipos de datos
+4.- tratar de reautlizar los controladores
+5.- crear carpetas de temp y logs
+6.- programar metodos para realizar la carga de datos de forma recursiva
+
+7.- investigar forma para utilizar en el remplazo un foramto solo utilizando objetos como en jsf con las vistas
+8.- utliza el modo debug para mostrar mensajes
+
+En la ultima parte de la pila esto y haciendo una agregacion directa
+deberia aumentar metodo para agregar , actualizar(cuando agregue y tenga mas de una pk y tenga que actualizar)
+*crear los metodos para buscar

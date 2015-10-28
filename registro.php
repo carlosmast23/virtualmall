@@ -3,16 +3,14 @@
     require_once findFirstPath();    
 ?>
 
-
 <?php
-
 require_once CONTROLADOR_SET;
 
 class Controlador extends ControladorSet
 {
     public function buscarValores() 
     {
-        $this->diccionario['calculo']="valor remplazado";
+        //$this->diccionario['calculo']="valor remplazado";
     }
 
     public function setDiccionario() {
@@ -23,7 +21,7 @@ class Controlador extends ControladorSet
     }
 
     public function getPagina() {
-        return "loginVista.php";
+        return "RegistroVista.php";
     }
 
     
@@ -35,5 +33,6 @@ class Controlador extends ControladorSet
 
 }
 (new Controlador())->renderizar();
+
 
 ?>

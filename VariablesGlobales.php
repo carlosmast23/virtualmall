@@ -1,5 +1,8 @@
+
+
 <?php
-   include_once './resources/Config.php';
+   //include_once './resources/Config.php';
+   require_once '../resources/Config.php';
    $config=  Config::getInstance();
    $subDir=$config->getSubSite();
    if(strlen($subDir)==0)
@@ -12,7 +15,8 @@
    }
    
    //define('RAIZ',$_SERVER['DOCUMENT_ROOT']."/$config->siteName/");
-   define('CONTROLADOR',"resources/controlador/"); 
+   define('CONTROLADOR_ACCION',RAIZ."resources/controlador/ControladorAccion.php"); 
+   
   // $arPaths[] = RAIZ."/resources";
   // $arPaths[] = RAIZ."/resources/conexion/";
   // $sMergedPaths = implode(PATH_SEPARATOR,$arPaths);

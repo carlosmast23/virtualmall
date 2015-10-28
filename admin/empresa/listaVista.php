@@ -10,20 +10,20 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en"><!-- InstanceBegin template="/Templates/contenidoPrincipal.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<html lang="en"><!-- InstanceBegin template="/Templates/adminPrincipal.dwt.php" codeOutsideHTMLIsLocked="false" -->
 	<head>
 		<title></title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-		<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-		<script type="text/javascript" src="js/jquery-1.6.js" ></script>
-		<script type="text/javascript" src="js/cufon-yui.js"></script>
-		<script type="text/javascript" src="js/cufon-replace.js"></script>  
-		<script type="text/javascript" src="js/Vegur_300.font.js"></script>
-		<script type="text/javascript" src="js/PT_Sans_700.font.js"></script>
-		<script type="text/javascript" src="js/PT_Sans_400.font.js"></script>
-		<script type="text/javascript" src="js/atooltip.jquery.js"></script>
+		<link rel="stylesheet" href="../../css/reset.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../../css/layout.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../../css/style.css" type="text/css" media="all">
+		<script type="text/javascript" src="../../js/jquery-1.6.js" ></script>
+		<script type="text/javascript" src="../../js/cufon-yui.js"></script>
+		<script type="text/javascript" src="../../js/cufon-replace.js"></script>  
+		<script type="text/javascript" src="../../js/Vegur_300.font.js"></script>
+		<script type="text/javascript" src="../../js/PT_Sans_700.font.js"></script>
+		<script type="text/javascript" src="../../js/PT_Sans_400.font.js"></script>
+		<script type="text/javascript" src="../../js/atooltip.jquery.js"></script>
 		<!--[if lt IE 9]>
 		<script type="text/javascript" src="js/html5.js"></script>
 		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
@@ -41,9 +41,7 @@
 				<div class="wrapper">
 					<h1><a href="indexVista.php.html" id="logo">Superior.com</a></h1>
 					<form id="search" method="post">
-						<fieldset>
-							<div class="bg"><input class="input" type="text" value="Search"  onblur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''" ></div>
-						</fieldset>
+						<a href="#">A D M I N I S T R A D O R</a>
 					</form>
 				</div>
 				<nav>
@@ -60,24 +58,33 @@
 <!--content -->
 			<article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
 				<div class="wrapper"><!-- InstanceBeginEditable name="Contenido" -->
-				</br>	
-                 <div style="width:30%;margin: 0 auto;border-width:4px;border-color:#5f870e;border-style:inset;padding:5px;text-align:center">
-                 	<h2>Login</h2>
-                    <form action="php/ValidarLogin.php" method="post">
-                    	<div  class="wrapper">
-                        	<span>Usuario:</span>
-                             <div class="bg"><input name="usuario" type="text" class="input" id="usuario" />
-                        </div>
+                
+				  <h2>Empresas</h2>
+                  <a href="nueva.php">Nueva Empresa</a>
+                  </br></br>
+                  <table  class="tabla" border="4px" width="100%">
+                  	<tr class="titulo">
+                    	<td>Nombre</td>
+                        <td>Direccion</td>
+                        <td>Telefono</td>
+                        <td>Email</td>
                         
-                        <div  class="wrapper">
-                        	<span>Clave:</span>
-                            <div class="bg"><input name="clave" type="password" class="input" id="clave" />
-                        </div>
+                     </tr>
                         
-                        </br>
-                      		<input class="button1" type="submit" value="Ingresar">
-                    </form>
-                 </div>
+                     <!--estructura=columna-->
+                     <tr>
+                        <td>[Nombre]</td>
+                        <td>[Direccion]</td>
+                        <td>[Telefono]</td>
+                        <td>[Email]</td>
+                        <td width="10%">
+                        	<a href="editar.php?id=[id]" >Editar</a>
+                            <a href="php/eliminar.php?id=[id]" >Eliminar</a>
+                        </td>
+                     </tr>
+                     <!--/estructura=columna-->
+                                        
+                  </table>
 				<!-- InstanceEndEditable --></div>
 			</article>
 		</div>
@@ -85,8 +92,7 @@
 			<div class="main">
 				<article id="content2">
 					<div class="wrapper"><!-- InstanceBeginEditable name="Otro contenido" -->
-					 <p><span class="color1">No estas registrado?</span><br>
-								Eres nuevo en VirtualMall , no pierdas tiempo , registrate para empezar a usar todos los beneficios , Ingresa <a href="registroVista.php">Aqui</a></p>
+					  <h3>Otro contenido</h3>
 					<!-- InstanceEndEditable --></div>
 				</article>
 			</div>
@@ -97,10 +103,10 @@
 			<footer>
 				<ul id="icons">
 					<li class="first">Siguenos:</li>
-					<li><a href="#" class="normaltip" title="Facebook"><img src="images/icon1.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="Twitter"><img src="images/icon2.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="Picasa"><img src="images/icon3.jpg" alt=""></a></li>
-					<li><a href="#" class="normaltip" title="YouTube"><img src="images/icon4.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Facebook"><img src="../../images/icon1.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Twitter"><img src="../../images/icon2.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Picasa"><img src="../../images/icon3.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="YouTube"><img src="../../images/icon4.jpg" alt=""></a></li>
 				</ul>
 				Codesoft.com &copy; 2015 <br>Website develoment by <a href="http://www.templatemonster.com/" target="_blank">Codesoft.com</a><br>
 				<!-- {%FOOTER_LINK} -->

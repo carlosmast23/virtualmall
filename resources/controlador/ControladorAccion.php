@@ -1,5 +1,5 @@
 <?php
-require_once RAIZ.'resources/Config.php';
+require_once RAIZ.'Config.php';
 require_once RAIZ.'resources/controlador/ControladorGenerico.php';
 
 abstract class ControladorAccion extends ControladorGenerico {
